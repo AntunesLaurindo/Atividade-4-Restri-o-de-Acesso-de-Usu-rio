@@ -1,1 +1,15 @@
+-- Utilização do banco de dados
+USE coma_bem_db;
+
+-- Criação do usuário administrador do banco de dados
+CREATE USER administrador_db@localhost IDENTIFIED BY '123456';
+
+-- Adicionando privilégios de administrador ao usuário
+GRANT ALL PRIVILEGES ON coma_bem_db.* TO administrador_db@localhost;
+
+-- Criação de um usuário comum com permissões limitadas
+CREATE USER usuario_db@localhost IDENTIFIED BY '1234';
+
+-- Adicionando permissões básicas ao usuário comum
+GRANT SELECT, INSERT, UPDATE ON coma_bem_db.* TO usuario_db@localhost;
 
